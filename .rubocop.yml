@@ -1,0 +1,63 @@
+Rails:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'db/schema.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Max: 162
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+
+Naming/MemoizedInstanceVariableName:
+  Exclude:
+    - 'app/services/message_service.rb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'bin/yarn'
+    - 'config/puma.rb'
+    - 'db/schema.rb'
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'db/schema.rb'
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/rails'
+    - 'bin/rake'
+
+Style/WordArray:
+  Exclude:
+    - 'db/schema.rb'
