@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+json_string = HTTParty.get('http://www.cbr.ru/scripts/XML_daily.asp').parsed_response
+abort('Invalid url or JSON object for currency parsing. Task cannot be executed.') if json_string['ValCurs'].nil?
+
+json_string['ValCurs']['Valute'].each do |item|
+  Currency.create(name: item['Name'], rate: item['Value'].gsub(/,/, '.'))
+end
