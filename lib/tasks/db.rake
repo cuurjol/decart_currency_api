@@ -1,7 +1,7 @@
 namespace :db do
   desc 'Update currency rates'
   task update_currency_rates: :environment do
-    abort('No currency records. Task cannot be executed.') if Currency.exists?
+    abort('No currency records. Task cannot be executed.') unless Currency.exists?
 
     json_string = HTTParty.get('http://www.cbr.ru/scripts/XML_daily.asp').parsed_response
     abort('Invalid url or JSON object for currency parsing. Task cannot be executed.') if json_string['ValCurs'].nil?
